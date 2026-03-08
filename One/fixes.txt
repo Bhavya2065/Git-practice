@@ -4,3 +4,5 @@ Hello My name is bug-fix
 There are an another fix 
 
 New bug arived and fixed
+
+Hello Fixes
