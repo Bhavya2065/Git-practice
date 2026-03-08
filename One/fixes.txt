@@ -6,3 +6,4 @@ There are an another fix
 New bug arived and fixed
 
 Hello Fixes
+another fix msg fot purple
