@@ -74,35 +74,37 @@ Git reflog shows the history of your commits, useful for debugging and understan
     **When to use:** To save staged changes to the repository with a descriptive message.
 23. **To commit all tracked files (add and commit in one step):** `git commit -a -m "Your commit message"`  
     **When to use:** To quickly commit all modified tracked files without explicitly staging them first.
+24. **To fix the last commit (add missing files or change message):** `git commit --amend -m "Updated commit message"`  
+    **When to use:** When you made a typo in the last commit message or forgot to add a small change. Use with caution if already pushed.
 
 ### Working with Remotes
-24. **Add a remote repository:** `git remote add origin <repository-url>`  
+25. **Add a remote repository:** `git remote add origin <repository-url>`  
     **When to use:** To connect your local repository to a remote repository (e.g., on GitHub) for the first time.
-25. **View remote repositories:** `git remote -v`  
+26. **View remote repositories:** `git remote -v`  
     **When to use:** To list all configured remote repositories and their URLs.
-26. **Remove a remote:** `git remote remove <remote-name>`  
+27. **Remove a remote:** `git remote remove <remote-name>`  
     **When to use:** To disconnect a remote repository that is no longer needed.
 
 ### Pushing and Pulling
-27. **Push changes to remote branch:** `git push origin <branch-name>`  
+28. **Push changes to remote branch:** `git push origin <branch-name>`  
     **When to use:** To upload your local commits to the remote repository after committing changes.
-28. **Push and set upstream (first push):** `git push -u origin <branch-name>`  
+29. **Push and set upstream (first push):** `git push -u origin <branch-name>`  
     **When to use:** On the first push of a new branch, to set the upstream branch for future pushes.
-29. **Pull changes from remote:** `git pull origin <branch-name>`  
+30. **Pull changes from remote:** `git pull origin <branch-name>`  
     **When to use:** To fetch and merge changes from the remote repository into your current branch.
-30. **Fetch changes without merging:** `git fetch origin`  
+31. **Fetch changes without merging:** `git fetch origin`  
     **When to use:** To download changes from the remote without automatically merging, allowing you to review before merging.
 
 ### Cloning Repositories
-31. **Clone a repository:** `git clone <repository-url>`  
+32. **Clone a repository:** `git clone <repository-url>`  
     **When to use:** To create a local copy of a remote repository for the first time.
 
 ### GitHub-Specific Workflow
-32. **Fork a repository on GitHub (via web interface, then clone your fork):** `git clone <your-fork-url>`  
+33. **Fork a repository on GitHub (via web interface, then clone your fork):** `git clone <your-fork-url>`  
     **When to use:** To contribute to an open-source project by creating your own copy on GitHub and cloning it locally.
-33. **Create a pull request (via GitHub web interface after pushing your branch)**  
+34. **Create a pull request (via GitHub web interface after pushing your branch)**  
     **When to use:** After pushing your feature branch, to propose merging your changes into the main repository.
-34. **Sync your fork with upstream:**  
+35. **Sync your fork with upstream:**  
     - Add upstream: `git remote add upstream <original-repo-url>`  
       **When to use:** To connect your fork to the original repository for syncing.  
     - Fetch upstream: `git fetch upstream`  
@@ -111,21 +113,23 @@ Git reflog shows the history of your commits, useful for debugging and understan
       **When to use:** To incorporate updates from the original repository into your local main branch.
 
 ### Advanced Git Commands
-35. **Cherry-pick a commit:** `git cherry-pick <commit-id>`  
+36. **Cherry-pick a commit:** `git cherry-pick <commit-id>`  
     **When to use:** To apply a specific commit from one branch to another without merging the entire branch.
-36. **Interactive rebase:** `git rebase -i <commit-id>`  
+37. **Interactive rebase:** `git rebase -i <commit-id>`  
     **When to use:** To edit, reorder, or squash commits in your branch history for a cleaner commit log.
-37. **Bisect for finding bugs:** `git bisect start`, `git bisect bad`, `git bisect good <commit-id>`  
+38. **Bisect for finding bugs:** `git bisect start`, `git bisect bad`, `git bisect good <commit-id>`  
     **When to use:** To perform a binary search through commit history to find the commit that introduced a bug.
-38. **View commit history:** `git log --oneline`  
-    **When to use:** To see a concise list of commits, useful for reviewing project history.
-39. **View differences:** `git diff` (unstaged), `git diff --staged` (staged)  
+39. **View commit history (improved):** `git log --oneline --graph --all`  
+    **When to use:** To see a visual tree of all branches and commits in a concise list.
+40. **View differences:** `git diff` (unstaged), `git diff --staged` (staged)  
     **When to use:** To see changes between working directory and last commit (unstaged) or staged changes before committing.
-40. **Undo last commit (keep changes):** `git reset --soft HEAD~1`  
+41. **Undo local changes in a file (modern):** `git restore <file_name>`  
+    **When to use:** When you messed up a file and want to revert it back to the last committed state.
+42. **Undo last commit (keep changes):** `git reset --soft HEAD~1`  
     **When to use:** To undo the last commit but keep the changes staged, allowing you to recommit with modifications.
-41. **Undo last commit (discard changes):** `git reset --hard HEAD~1`  
+43. **Undo last commit (discard changes):** `git reset --hard HEAD~1`  
     **When to use:** To completely remove the last commit and discard all changes, use with extreme caution.
-42. **Create and apply patches:** `git format-patch` and `git am`  
+44. **Create and apply patches:** `git format-patch` and `git am`  
     **When to use:** To create patch files from commits and apply them elsewhere, useful for sharing changes without pushing.
 
 ### Best Practices
